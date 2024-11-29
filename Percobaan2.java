@@ -8,15 +8,28 @@ public class Percobaan2 {
         }
     }
 
+    static int tampilan(int x, int y){
+        int temp = x;
+        if (y == 0){
+            temp = 1;
+        }else{
+            temp = tampilan(x, y - 1);
+            System.out.print(x + "x");
+        }
+        return temp;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int bilangan, pangkat;
+        int bilangan, pangkat, hasil;
 
-        System.out.println("Bilangan yang dihitung: ");
+        System.out.print("Bilangan yang dihitung: ");
         bilangan = sc.nextInt();
-        System.out.println("Pangkat: ");
+        System.out.print("Pangkat: ");
         pangkat = sc.nextInt();
 
-        System.out.println(hitungPangkat(bilangan, pangkat));
+        hasil = hitungPangkat(bilangan, pangkat);
+        System.out.println(tampilan(bilangan, pangkat) + "=" + hasil);
+        
     }
 }
